@@ -1,110 +1,113 @@
 <?php
 /*
 Plugin Name: SOUP - Show Off Upcoming Posts
-Plugin URI: http://www.doitwithwordpress.com
+Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
 Description: Displays your upcoming posts to tease your readers
 Author: Dave Clements
-Version: 1.1
+Version: 1.2a
 Author URI: http://www.theukedge.com
 */
+
+	// Start class soup_widget //
  
-function soup()
-{
-   ?>
+	class soup_widget extends WP_Widget {
+ 
+	// Constructor //
+    
+		function soup_widget() {
+			$widget_ops = array( 'classname' => 'soup_widget', 'description' => 'Displays your upcoming posts to tease your readers' ); // Widget Settings
+			$control_ops = array( 'id_base' => 'soup_widget' ); // Widget Control Settings
+			$this->WP_Widget( 'soup_widget', 'Upcoming', $widget_ops, $control_ops ); // Create the widget
+		}
 
-<p>
-	<div class=".box.widget_upcoming">
-		<?php
+	// Extract Args //
 
-$options = get_option('widget_soup');
-  if (!is_array( $options ))
-{
-$options = array(
-      'soup_number' => '3'
-      );
-  }
+		function widget($args, $instance) {
+			extract( $args );
+			$title 		= apply_filters('widget_title', $instance['title']); // the widget title
+			$soupnumber 	= $instance['soup_number']; // the number of posts to show
+			$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
+			$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
 
-$soupnumber = $options['soup_number'];
-
-			$my_query = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => 'future', 'order' => 'ASC'));
-			if ($my_query->have_posts()) {
-			while ($my_query->have_posts()) : $my_query->the_post();
+	// Before widget //
+		
+			echo $before_widget;
+		
+	// Title of widget //
+		
+			if ( $title ) { echo $before_title . $title . $after_title; }
+		
+	// Widget output //
+		
+			$soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => 'future', 'order' => 'ASC'));
+			if ($soupquery->have_posts()) {
+			while ($soupquery->have_posts()) : $soupquery->the_post();
 			$do_not_duplicate = $post->ID;
-		?>
-			<ul>
-        			<li>
-        				<?php the_title(); ?>
-        			</li>
-			</ul>
-		<?php endwhile;
-		} ?>
-	</div>
-</p>
-<p>
-	<div class=".box.widget_upcoming">
-		<a href="<?php bloginfo('rss2_url'); ?>" title="Subscribe to <?php bloginfo('name'); ?>">
-			<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php bloginfo('url'); ?>/wp-content/plugins/soup-show-off-upcoming-posts/icons/rss.png" width="16px" alt="Subscribe to <?php bloginfo('name'); ?>" />
-		</a>
-		Don't miss it - <strong><a href="<?php bloginfo('rss2_url'); ?>" title="Subscribe to <?php bloginfo('name'); ?>">Subscribe by RSS.</a></strong>
-	</div>
-</p>
+			?>
+				<ul>
+        				<li>
+        					<?php the_title(); ?>
+        				</li>
+				</ul>
+			<?php endwhile;
+			}
+			echo '</p>';
+			echo '<p>';
+			echo '<a href="'; bloginfo('rss2_url'); echo '" title="Subscribe to '; bloginfo('name'); echo '">';
+			echo '<img style="vertical-align:middle; margin:0 10px 0 0;" src="'; bloginfo('wpurl'); echo '/wp-content/plugins/soup-upcoming-post/icons/rss.png" width="16px" height="16px" alt="Subscribe to '; bloginfo('name'); echo '" />';
+			echo '</a>';
+			echo 'Don\'t miss it - <strong><a href="'; bloginfo('rss2_url'); echo '" title="Subscribe to '; bloginfo('name'); echo '">Subscribe by RSS.</a></strong>';
+			echo '</p>';
+		
+			if ($shownews) {
+			echo '<p>';
+			echo 'Or, just <strong><a href="'; echo $newsletterurl; echo '" title="Subscribe to '; bloginfo ('name'); echo '">subscribe to the newsletter</a></strong>!';
+			echo '</p>';
+			}
+				
+	// After widget //
+		
+			echo $after_widget;
+		}
+		
+	// Update Settings //
+ 
+		function update($new_instance, $old_instance) {
+			$instance['title'] = strip_tags($new_instance['title']);
+			$instance['soup_number'] = strip_tags($new_instance['soup_number']);
+			$instance['show_newsletter'] = ($new_instance['show_newsletter']);
+			$instance['newsletter_url'] = ($new_instance['newsletter_url']);
+			return $instance;
+		}
+ 
+	// Widget Control Panel //
+	
+		function form($instance) {
 
-<?php }
-
-function widget_soup($args) {
-  extract($args);
-
-$options = get_option("widget_soup");
-  if (!is_array( $options ))
-{
-$options = array(
-      'title' => 'Upcoming Posts'
-      );
-  }
-
-
-  echo $before_widget;
-  echo $before_title;
-  echo $options['title'];
-  echo $after_title;
-  soup();
-  echo $after_widget;
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'show_newsletter' => false, newsletter_url => '' );
+		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>'" type="text" value="<?php echo $instance['title']; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('soup_number'); ?>"><?php _e('Number of upcoming posts to display'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('soup_number'); ?>" name="<?php echo $this->get_field_name('soup_number'); ?>" type="text" value="<?php echo $instance['soup_number']; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('show_newsletter'); ?>"><?php _e('Show Newsletter?'); ?></label>
+			<input type="checkbox" class="checkbox" <?php checked( $instance['show_newsletter'], 'on' ); ?> id="<?php echo $this->get_field_id('show_newsletter'); ?>" name="<?php echo $this->get_field_name('show_newsletter'); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('newsletter_url'); ?>"><?php _e('Newsletter URL:'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('newsletter_url'); ?>" name="<?php echo $this->get_field_name('newsletter_url'); ?>" type="text" value="<?php echo $instance['newsletter_url']; ?>" />
+		</p>
+        <?php }
+ 
 }
 
-function soup_control() {
-	$options = get_option('widget_soup');
- 	 if (!is_array( $options ))
-	{
-	$options = array(
-      'title' => 'Upcoming Posts',
-      'soup_number' => 3
-      );
-  }
+// End class soup_widget
 
-if ($_POST['soup-submit'])
-  {
-    $options['title'] = htmlspecialchars($_POST['soup_widget_title']);
-    $options['soup_number'] = htmlspecialchars($_POST['soup_no_of_posts']);
-    update_option("widget_soup", $options);
-  }
-
-?>
-	<p>
-    <label for="soup_widget_title">Widget title: </label>
-    <input type="text" id="soup_widget_title" name="soup_widget_title" value="<?php echo $options['title'];?>" />
-  </p>
-	<p>
-    <label for="soup_no_of_posts">No. of posts: </label>
-    <input type="text" id="soup_no_of_posts" name="soup_no_of_posts" value="<?php echo $options['soup_number'];?>" />
-	<input type="hidden" id="soup-submit" name="soup-submit" value="1" />
-  </p>
-<?php }
-
-function soup_init() {
-	register_sidebar_widget (__('Upcoming Posts'), 'widget_soup');
-	register_widget_control( 'Upcoming Posts', 'soup_control' );
-	}
-
-add_action('plugins_loaded', 'soup_init');
-
+add_action('widgets_init', create_function('', 'return register_widget("soup_widget");'));
 ?>
