@@ -46,6 +46,7 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 == Screenshots ==
 
 1. An example of the widget in use.
+2. The widget control panel.
 
 == Changelog ==
 
