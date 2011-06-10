@@ -4,7 +4,7 @@ Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
 Description: Displays your upcoming posts to tease your readers
 Author: Dave Clements
-Version: 1.2a
+Version: 1.2
 Author URI: http://www.theukedge.com
 */
 
@@ -39,7 +39,9 @@ Author URI: http://www.theukedge.com
 		
 	// Widget output //
 		
-			$soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => 'future', 'order' => 'ASC'));
+			?>
+			<p>
+			<?php $soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => 'future', 'order' => 'ASC'));
 			if ($soupquery->have_posts()) {
 			while ($soupquery->have_posts()) : $soupquery->the_post();
 			$do_not_duplicate = $post->ID;
@@ -50,20 +52,20 @@ Author URI: http://www.theukedge.com
         				</li>
 				</ul>
 			<?php endwhile;
-			}
-			echo '</p>';
-			echo '<p>';
-			echo '<a href="'; bloginfo('rss2_url'); echo '" title="Subscribe to '; bloginfo('name'); echo '">';
-			echo '<img style="vertical-align:middle; margin:0 10px 0 0;" src="'; bloginfo('wpurl'); echo '/wp-content/plugins/soup-upcoming-post/icons/rss.png" width="16px" height="16px" alt="Subscribe to '; bloginfo('name'); echo '" />';
-			echo '</a>';
-			echo 'Don\'t miss it - <strong><a href="'; bloginfo('rss2_url'); echo '" title="Subscribe to '; bloginfo('name'); echo '">Subscribe by RSS.</a></strong>';
-			echo '</p>';
+			} ?>
+			</p>
+			<p>
+				<a href="<?php bloginfo('rss2_url') ?>" title="Subscribe to <?php bloginfo('name') ?>">
+					<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php bloginfo('wpurl') ?>/wp-content/plugins/soup-upcoming-post/icons/rss.png" width="16px" height="16px" alt="Subscribe to <?php bloginfo('name') ?>" />		
+				</a>
+				Don't miss it - <strong><a href="<?php bloginfo('rss2_url') ?>" title="Subscribe to <?php bloginfo('name') ?>">Subscribe by RSS.</a></strong>
+			</p>
 		
-			if ($shownews) {
-			echo '<p>';
-			echo 'Or, just <strong><a href="'; echo $newsletterurl; echo '" title="Subscribe to '; bloginfo ('name'); echo '">subscribe to the newsletter</a></strong>!';
-			echo '</p>';
-			}
+			<?php if ($shownews) { ?>
+			<p>
+				Or, just <strong><a href="<?php echo $newsletterurl; ?>" title="Subscribe to <?php bloginfo ('name') ?>">subscribe to the newsletter</a></strong>!
+			</p>
+			<?php }
 				
 	// After widget //
 		
