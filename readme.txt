@@ -1,30 +1,42 @@
 === Plugin Name ===
 Contributors: thewanderingbrit
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G83BH4VJRKMBJ
-Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers
-Requires at least: 2.0.2
-Tested up to: 3.1.2
-Stable tag: 1.1
+Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner
+Requires at least: 2.9
+Tested up to: 3.1.3
+Stable tag: 1.2
 
-Displays your upcoming posts to tease your readers
+Displays your upcoming posts in a sidebar widget to tease your readers
 
 == Description ==
 
-SOUP is a simple plugin that creates a widget which will show off your upcoming (scheduled) posts to your readers, which allows you to create interest for readers to return to your site and read your future articles.
+SOUP creates a widget in your sidebar which allows you to display your upcoming posts (scheduled, not drafts) to your readers. The idea is to entice your readers to come back and read the article once it gets published, or better yet, subscribe to your RSS feed and/or newsletter.
 
-At the moment, the plugin has just two configurable options: number of posts to display and widget title. However, I plan to keep developing this plugin and adding functionality.
+There's just a few options in this widget at present:
+
+* Title of sidebar widget
+* Number of upcoming posts to display (always in ascending order - newest first)
+* Show/hide newsletter link
+* Include link to sign up to newsletter
+
+I've got plans to continue developing and updating this plugin. If you have any suggestions on revisions that you'd like to see made, please [get in touch](http://www.theukedge.com/contact/ "Contact Dave at The UK Edge") or [find me on Twitter](http://www.twitter.com/daclements "Dave on Twitter").
 
 == Installation ==
 
-1. Upload `soup-coming-post` folder to the `/wp-content/plugins/` directory
+1. Upload `soup-show-off-upcoming-posts` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Go to Appearance > Widgets to put the widget in your selected sidebar
+1. Go to Appearance > Widgets to put the widget in your selected sidebar.
+1. Set your settings, hit Save and go to your site to see it in action.
 
 == Frequently Asked Questions ==
 
 = Are there more options planned in future? =
 
-Absolutely. I'll be providing more options and upgrades in the near future.
+Absolutely. I'll be providing more options and upgrades in the near future. You can stay up to date by following me on [Twitter](http://www.twitter.com/daclements "Dave on Twitter").
+
+= I don't have a newsletter. Is this functionality lost on me? =
+
+Many WordPress users send their RSS feed through FeedBurner, which has the option to deliver your latest posts by email to anyone who subscribes. Just log in to FeedBurner, go to the Publicize tab and select Email Subscriptions where you'll be able to grab the link.
 
 = I'm having issues. What do I do? =
 
@@ -32,9 +44,13 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Screenshots ==
 
-1. An example of the widget in use. This has been modified to include a link to my newsletter (may appear in future versions).
+1. An example of the widget in use.
 
 == Changelog ==
+
+= 1.2 =
+* Included option to display URL to newsletter signup.
+* Revised and tidied up code
 
 = 1.1 =
 * Made changes to include cross-compatibility for different sites.
@@ -43,6 +59,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.2 =
+* Adds the ability to also send readers to your newsletter signup page to subscribe to future updates.
 
 = 1.1 =
 Initial version for other sites.
