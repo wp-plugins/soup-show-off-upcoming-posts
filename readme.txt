@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: thewanderingbrit
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G83BH4VJRKMBJ
-Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner
+Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts
 Requires at least: 2.9
 Tested up to: 3.1.3
 Stable tag: 1.3
