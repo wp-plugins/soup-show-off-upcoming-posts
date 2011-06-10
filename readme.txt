@@ -65,6 +65,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Upgrade Notice ==
 
+= 1.3.1 =
+* Adds link to newsletter and provides choice to display drafts, scheduled posts, or both.
+
 = 1.3 =
 * Adds link to newsletter and provides choice to display drafts, scheduled posts, or both.
 
