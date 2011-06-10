@@ -4,18 +4,19 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner
 Requires at least: 2.9
 Tested up to: 3.1.3
-Stable tag: 1.2
+Stable tag: 1.3
 
 Displays your upcoming posts in a sidebar widget to tease your readers
 
 == Description ==
 
-SOUP creates a widget in your sidebar which allows you to display your upcoming posts (scheduled, not drafts) to your readers. The idea is to entice your readers to come back and read the article once it gets published, or better yet, subscribe to your RSS feed and/or newsletter.
+SOUP creates a widget in your sidebar which allows you to display your upcoming posts (scheduled, drafts, or both) to your readers. The idea is to entice your readers to come back and read the article once it gets published, or better yet, subscribe to your RSS feed and/or newsletter.
 
 There's just a few options in this widget at present:
 
 * Title of sidebar widget
 * Number of upcoming posts to display (always in ascending order - newest first)
+* Choose whether to show scheduled posts, drafts, or both.
 * Show/hide newsletter link
 * Include link to sign up to newsletter
 
@@ -48,6 +49,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.3 =
+* Included option to display either drafts, scheduled posts, or both.
+
 = 1.2 =
 * Included option to display URL to newsletter signup.
 * Revised and tidied up code
@@ -59,6 +63,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.3 =
+* Adds link to newsletter and provides choice to display drafts, scheduled posts, or both.
 
 = 1.2 =
 * Adds the ability to also send readers to your newsletter signup page to subscribe to future updates.

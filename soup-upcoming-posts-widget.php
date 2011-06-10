@@ -4,7 +4,7 @@ Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
 Description: Displays your upcoming posts to tease your readers
 Author: Dave Clements
-Version: 1.2
+Version: 1.3
 Author URI: http://www.theukedge.com
 */
 
@@ -26,6 +26,7 @@ Author URI: http://www.theukedge.com
 			extract( $args );
 			$title 		= apply_filters('widget_title', $instance['title']); // the widget title
 			$soupnumber 	= $instance['soup_number']; // the number of posts to show
+			$posttype 	= $instance['post_type']; // the type of posts to show
 			$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
 			$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
 
@@ -41,7 +42,7 @@ Author URI: http://www.theukedge.com
 		
 			?>
 			<p>
-			<?php $soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => 'future', 'order' => 'ASC'));
+			<?php $soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => $posttype, 'order' => 'ASC'));
 			if ($soupquery->have_posts()) {
 			while ($soupquery->have_posts()) : $soupquery->the_post();
 			$do_not_duplicate = $post->ID;
@@ -77,8 +78,9 @@ Author URI: http://www.theukedge.com
 		function update($new_instance, $old_instance) {
 			$instance['title'] = strip_tags($new_instance['title']);
 			$instance['soup_number'] = strip_tags($new_instance['soup_number']);
-			$instance['show_newsletter'] = ($new_instance['show_newsletter']);
-			$instance['newsletter_url'] = ($new_instance['newsletter_url']);
+			$instance['post_type'] = $new_instance['post_type'];
+			$instance['show_newsletter'] = $new_instance['show_newsletter'];
+			$instance['newsletter_url'] = $new_instance['newsletter_url'];
 			return $instance;
 		}
  
@@ -86,7 +88,7 @@ Author URI: http://www.theukedge.com
 	
 		function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'show_newsletter' => false, newsletter_url => '' );
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'show_newsletter' => false, newsletter_url => '' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<p>
@@ -96,6 +98,14 @@ Author URI: http://www.theukedge.com
 		<p>
 			<label for="<?php echo $this->get_field_id('soup_number'); ?>"><?php _e('Number of upcoming posts to display'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('soup_number'); ?>" name="<?php echo $this->get_field_name('soup_number'); ?>" type="text" value="<?php echo $instance['soup_number']; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('post_type'); ?>">Sex:</label>
+			<select id="<?php echo $this->get_field_id('post_type'); ?>" name="<?php echo $this->get_field_name('post_type'); ?>" class="widefat" style="width:100%;">
+				<option value="future,draft" <?php selected('future,draft', $instance['post_type']); ?>>Both scheduled posts and drafts</option>
+				<option value="future" <?php selected('future', $instance['post_type']); ?>>Scheduled posts only</option>
+				<option value="draft" <?php selected('draft', $instance['post_type']); ?>>Drafts only</option>
+			</select>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('show_newsletter'); ?>"><?php _e('Show Newsletter?'); ?></label>
