@@ -100,7 +100,7 @@ Author URI: http://www.theukedge.com
 			<input class="widefat" id="<?php echo $this->get_field_id('soup_number'); ?>" name="<?php echo $this->get_field_name('soup_number'); ?>" type="text" value="<?php echo $instance['soup_number']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('post_type'); ?>">Sex:</label>
+			<label for="<?php echo $this->get_field_id('post_type'); ?>">Post status:</label>
 			<select id="<?php echo $this->get_field_id('post_type'); ?>" name="<?php echo $this->get_field_name('post_type'); ?>" class="widefat" style="width:100%;">
 				<option value="future,draft" <?php selected('future,draft', $instance['post_type']); ?>>Both scheduled posts and drafts</option>
 				<option value="future" <?php selected('future', $instance['post_type']); ?>>Scheduled posts only</option>
