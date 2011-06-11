@@ -4,7 +4,7 @@ Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
 Description: Displays your upcoming posts to tease your readers
 Author: Dave Clements
-Version: 1.3.1
+Version: 1.3.2
 Author URI: http://www.theukedge.com
 */
 
@@ -29,6 +29,7 @@ Author URI: http://www.theukedge.com
 			$posttype 	= $instance['post_type']; // the type of posts to show
 			$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
 			$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
+			$authorcredit	= isset($instance['author_credit']) ? $instance['author_credit'] : on ; // give plugin author credit
 
 	// Before widget //
 		
@@ -67,6 +68,12 @@ Author URI: http://www.theukedge.com
 				Or, just <strong><a href="<?php echo $newsletterurl; ?>" title="Subscribe to <?php bloginfo ('name') ?>">subscribe to the newsletter</a></strong>!
 			</p>
 			<?php }
+
+			if ($authorcredit) { ?>
+			<p style="font-size:10px;">
+				Widget created by <a href="http://www.doitwithwp.com" title="WordPress Tutorials">Dave Clements</a>
+			</p>
+			<?php }
 				
 	// After widget //
 		
@@ -81,6 +88,7 @@ Author URI: http://www.theukedge.com
 			$instance['post_type'] = $new_instance['post_type'];
 			$instance['show_newsletter'] = $new_instance['show_newsletter'];
 			$instance['newsletter_url'] = $new_instance['newsletter_url'];
+			$instance['author_credit'] = $new_instance['author_credit'];
 			return $instance;
 		}
  
@@ -88,7 +96,7 @@ Author URI: http://www.theukedge.com
 	
 		function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'show_newsletter' => false, newsletter_url => '' );
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'show_newsletter' => false, newsletter_url => '', author_credit => on );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<p>
@@ -114,6 +122,10 @@ Author URI: http://www.theukedge.com
 		<p>
 			<label for="<?php echo $this->get_field_id('newsletter_url'); ?>"><?php _e('Newsletter URL:'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('newsletter_url'); ?>" name="<?php echo $this->get_field_name('newsletter_url'); ?>" type="text" value="<?php echo $instance['newsletter_url']; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('author_credit'); ?>"><?php _e('Give credit to plugin author?'); ?></label>
+			<input type="checkbox" class="checkbox" <?php checked( $instance['author_credit'], 'on' ); ?> id="<?php echo $this->get_field_id('author_credit'); ?>" name="<?php echo $this->get_field_name('author_credit'); ?>" />
 		</p>
         <?php }
  
