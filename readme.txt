@@ -50,6 +50,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.3.1 =
+* Minor updates
+
 = 1.3 =
 * Included option to display either drafts, scheduled posts, or both.
 
