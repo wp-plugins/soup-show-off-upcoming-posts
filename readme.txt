@@ -74,7 +74,7 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 == Upgrade Notice ==
 
 = 1.3.2 =
-* Adds link to newsletter and provides choice to display drafts, scheduled posts, or both. Included option to give plugin author credit (on by default).
+* Adds link to newsletter and provides choice to display drafts, scheduled posts, or both. Included option to give plugin author credit.
 
 = 1.3.1 =
 * Adds link to newsletter and provides choice to display drafts, scheduled posts, or both.

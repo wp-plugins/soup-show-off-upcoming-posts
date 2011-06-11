@@ -29,7 +29,7 @@ Author URI: http://www.theukedge.com
 			$posttype 	= $instance['post_type']; // the type of posts to show
 			$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
 			$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
-			$authorcredit	= isset($instance['author_credit']) ? $instance['author_credit'] : on ; // give plugin author credit
+			$authorcredit	= isset($instance['author_credit']) ? $instance['author_credit'] : false ; // give plugin author credit
 
 	// Before widget //
 		
@@ -96,7 +96,7 @@ Author URI: http://www.theukedge.com
 	
 		function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'show_newsletter' => false, newsletter_url => '', author_credit => on );
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'show_newsletter' => false, newsletter_url => '', author_credit => 'on' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<p>
