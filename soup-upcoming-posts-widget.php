@@ -75,7 +75,7 @@ License: GPL2
 			</p>
 			<p>
 				<a href="<?php bloginfo('rss2_url') ?>" title="Subscribe to <?php bloginfo('name') ?>">
-					<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php bloginfo('wpurl') ?>/wp-content/plugins/soup-upcoming-post/icons/rss.png" width="16px" height="16px" alt="Subscribe to <?php bloginfo('name') ?>" />		
+					<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php bloginfo('wpurl') ?>/wp-content/plugins/soup-show-off-upcoming-posts/icons/rss.png" width="16px" height="16px" alt="Subscribe to <?php bloginfo('name') ?>" />		
 				</a>
 				Don't miss it - <strong><a href="<?php bloginfo('rss2_url') ?>" title="Subscribe to <?php bloginfo('name') ?>">Subscribe by RSS.</a></strong>
 			</p>
