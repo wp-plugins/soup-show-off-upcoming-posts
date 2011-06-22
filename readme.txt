@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 3.1.3
-Stable tag: 1.3.3
+Stable tag: 1.4
 
 Displays your upcoming posts in a sidebar widget to tease your readers
 
@@ -17,6 +17,7 @@ There's just a few options in this widget at present:
 * Title of sidebar widget
 * Number of upcoming posts to display (always in ascending order - newest first)
 * Choose whether to show scheduled posts, drafts, or both.
+* Display order of the posts (next post first or random order)
 * Show/hide newsletter link
 * Include link to sign up to newsletter
 
@@ -52,6 +53,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.4 =
+* Added option to change display order of posts (random, or next post first)
+
 = 1.3.3 =
 * Fixed bad image link for RSS icon.
 
@@ -75,6 +79,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.4 =
+* Added option to change display order of posts (random or next post first)
 
 = 1.3.3 =
 * Adds link to newsletter and provides choice to display drafts, scheduled posts, or both. Included option to give plugin author credit. Fixed incorrect image reference.
