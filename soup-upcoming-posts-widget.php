@@ -88,9 +88,9 @@ License: GPL2
 			<?php }
 
 			if ($authorcredit) { ?>
-			<p style="font-size:10px;">
+			<p><small>
 				Widget created by <a href="http://www.doitwithwp.com" title="WordPress Tutorials">Dave Clements</a>
-			</p>
+			</small></p>
 			<?php }
 				
 	// After widget //
