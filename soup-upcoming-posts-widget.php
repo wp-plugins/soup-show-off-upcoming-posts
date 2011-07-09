@@ -3,7 +3,7 @@
 Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
 Description: Displays your upcoming posts to tease your readers
-Version: 1.4
+Version: 1.5
 Author: Dave Clements
 Author URI: http://www.theukedge.com
 License: GPL2
@@ -48,6 +48,7 @@ License: GPL2
 			$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
 			$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
 			$authorcredit	= isset($instance['author_credit']) ? $instance['author_credit'] : false ; // give plugin author credit
+			$noresults	= $instance['no_results']; // Message for when there are no posts to display
 
 	// Before widget //
 		
@@ -62,7 +63,7 @@ License: GPL2
 			?>
 			<p>
 			<?php $soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => $posttype, 'order' => 'ASC', 'orderby' => $postorder));
-			if ($soupquery->have_posts()) {
+			if ($soupquery->have_posts()) :
 			while ($soupquery->have_posts()) : $soupquery->the_post();
 			$do_not_duplicate = $post->ID;
 			?>
@@ -72,7 +73,8 @@ License: GPL2
         				</li>
 				</ul>
 			<?php endwhile;
-			} ?>
+			else: echo $noresults;
+			endif; ?>
 			</p>
 			<p>
 				<a href="<?php bloginfo('rss2_url') ?>" title="Subscribe to <?php bloginfo('name') ?>">
@@ -88,9 +90,9 @@ License: GPL2
 			<?php }
 
 			if ($authorcredit) { ?>
-			<p><small>
+			<p style="font-size:10px;">
 				Widget created by <a href="http://www.doitwithwp.com" title="WordPress Tutorials">Dave Clements</a>
-			</small></p>
+			</p>
 			<?php }
 				
 	// After widget //
@@ -108,6 +110,7 @@ License: GPL2
 			$instance['show_newsletter'] = $new_instance['show_newsletter'];
 			$instance['newsletter_url'] = strip_tags($new_instance['newsletter_url'],'<a>');
 			$instance['author_credit'] = $new_instance['author_credit'];
+			$instance['no_results'] = $new_instance['no_results'];
 			return $instance;
 		}
  
@@ -115,7 +118,7 @@ License: GPL2
 	
 		function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'post_order' => 'date', 'show_newsletter' => false, newsletter_url => '', author_credit => 'on' );
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'post_type' => 'future', 'post_order' => 'date', 'show_newsletter' => false, newsletter_url => '', author_credit => 'on', 'no_results' => 'Sorry - nothing planned yet!' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<p>
@@ -140,6 +143,10 @@ License: GPL2
 				<option value="date" <?php selected('date', $instance['post_order']); ?>>Next post first</option>
 				<option value="rand" <?php selected('rand', $instance['post_order']); ?>>Random order</option>
 			</select>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('no_results'); ?>"><?php _e('Message to display for no results:'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('no_results'); ?>" name="<?php echo $this->get_field_name('no_results'); ?>" type="text" value="<?php echo $instance['no_results']; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('show_newsletter'); ?>"><?php _e('Show Newsletter?'); ?></label>
