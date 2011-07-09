@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 3.2
-Stable tag: 1.4
+Stable tag: 1.5
 
 Displays your upcoming posts in a sidebar widget to tease your readers
 
@@ -12,12 +12,13 @@ Displays your upcoming posts in a sidebar widget to tease your readers
 
 SOUP creates a widget in your sidebar which allows you to display your upcoming posts (scheduled, drafts, or both) to your readers. The idea is to entice your readers to come back and read the article once it gets published, or better yet, subscribe to your RSS feed and/or newsletter.
 
-There's just a few options in this widget at present:
+Here are the configurable options for the widget:
 
 * Title of sidebar widget
 * Number of upcoming posts to display (always in ascending order - newest first)
 * Choose whether to show scheduled posts, drafts, or both.
 * Display order of the posts (next post first or random order)
+* Message to display for when there are no scheduled posts or drafts
 * Show/hide newsletter link
 * Include link to sign up to newsletter
 
@@ -53,6 +54,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.5 =
+* Added option (and default setting) to configure message that is displayed if there are no posts matching your settings.
+
 = 1.4 =
 * Added option to change display order of posts (random, or next post first)
 
@@ -79,6 +83,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.5 =
+* Added configurable message for when there are no posts to display
 
 = 1.4 =
 * Added option to change display order of posts (random or next post first)
