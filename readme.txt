@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 3.2.1
-Stable tag: 1.5
+Stable tag: 1.5.1
 
 Displays your upcoming posts in a sidebar widget to tease your readers
 
@@ -54,6 +54,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.5.1 =
+* Modified database query to exclude sticky posts, which were showing up no matter what options you set.
+
 = 1.5 =
 * Added option (and default setting) to configure message that is displayed if there are no posts matching your settings.
 
@@ -83,6 +86,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.5.1 =
+* Removed sticky posts from showing up in widget.
 
 = 1.5 =
 * Added configurable message for when there are no posts to display
