@@ -62,7 +62,7 @@ License: GPL2
 		
 			?>
 			<p>
-			<?php $soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => $posttype, 'order' => 'ASC', 'orderby' => $postorder));
+			<?php $soupquery = new WP_Query(array('posts_per_page' => $soupnumber, 'nopaging' => 0, 'post_status' => $posttype, 'order' => 'ASC', 'orderby' => $postorder, 'ignore_sticky_posts' => '1'));
 			if ($soupquery->have_posts()) :
 			while ($soupquery->have_posts()) : $soupquery->the_post();
 			$do_not_duplicate = $post->ID;
