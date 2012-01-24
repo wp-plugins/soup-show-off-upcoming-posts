@@ -3,7 +3,7 @@ Contributors: thewanderingbrit
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YMGV56YZ8K5YW
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
-Tested up to: 3.2.1
+Tested up to: 3.3.1
 Stable tag: 1.5.1
 
 Displays your upcoming posts in a sidebar widget to tease your readers
