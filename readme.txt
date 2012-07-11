@@ -3,8 +3,8 @@ Contributors: thewanderingbrit
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YMGV56YZ8K5YW
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
-Tested up to: 3.3.1
-Stable tag: 1.5.1
+Tested up to: 3.4.1
+Stable tag: 1.6
 
 Displays your upcoming posts in a sidebar widget to tease your readers
 
@@ -16,6 +16,7 @@ Here are the configurable options for the widget:
 
 * Title of sidebar widget
 * Number of upcoming posts to display (always in ascending order - newest first)
+* Which categories to display posts from
 * Choose whether to show scheduled posts, drafts, or both.
 * Display order of the posts (next post first or random order)
 * Message to display for when there are no scheduled posts or drafts
@@ -54,6 +55,11 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.6 =
+* Added ability to filter posts by category, so that you can be specific about the particular categories you want to show posts from.
+* Audited and tidied up the code.
+* Prepared plugin for full internationalization - please send translations if you have some.
+
 = 1.5.1 =
 * Modified database query to exclude sticky posts, which were showing up no matter what options you set.
 
@@ -86,6 +92,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.6 =
+* Add ability to set posts by category, cleaned up code and prepared widget for complete localization.
 
 = 1.5.1 =
 * Removed sticky posts from showing up in widget.
