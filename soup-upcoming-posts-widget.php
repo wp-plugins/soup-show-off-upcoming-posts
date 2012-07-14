@@ -78,20 +78,20 @@ class soup_widget extends WP_Widget {
 			
 		<p>
 			<a href="<?php bloginfo('rss2_url') ?>" title="<?php _e('Subscribe to '); bloginfo('name'); ?>">
-				<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php echo plugins_url( 'includes/images/rss.png' , __FILE__ ); ?>" width="16px" height="16px" alt="<?php _e('Subscribe to '); bloginfo('name'); ?>" />		
+				<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php echo plugins_url( 'includes/images/rss.png' , __FILE__ ); ?>" width="16px" height="16px" alt="<?php _e('Subscribe to '); bloginfo('name'); ?>" />
 			</a>
-			<?php _e('Don\'t miss it - '); ?><strong><a href="<?php bloginfo('rss2_url') ?>" title="<?php _e('Subscribe to '); bloginfo('name'); ?>"><?php _e('Subscribe by RSS.'); ?></a></strong>
+			<?php _e('Don\'t miss it'); ?> - <strong><a href="<?php bloginfo('rss2_url') ?>" title="<?php _e('Subscribe to '); bloginfo('name'); ?>"><?php _e('Subscribe by RSS'); ?>.</a></strong>
 		</p>
 		
 		<?php if ($shownews) { ?>
 		<p>
-			<?php _e('Or, just '); ?><strong><a href="<?php echo $newsletterurl; ?>" title="<?php _e('Subscribe to '); bloginfo ('name'); _e(' newsletter'); ?>"><?php _e('subscribe to the newsletter'); ?></a></strong>!
+			<?php _e('Or, just'); ?> <strong><a href="<?php echo $newsletterurl; ?>" title="<?php _e('Subscribe to '); bloginfo ('name'); _e(' newsletter'); ?>"><?php _e('subscribe to the newsletter'); ?></a></strong>!
 		</p>
 		<?php }
 
 		if ($authorcredit) { ?>
 		<p style="font-size:10px;">
-			<?php _e('Widget created by '); ?><a href="http://www.doitwithwp.com" title="WordPress Tutorials">Dave Clements</a>
+			<?php _e('Widget created by'); ?> <a href="http://www.doitwithwp.com" title="WordPress Tutorials">Dave Clements</a>
 		</p>
 		<?php }
 				
