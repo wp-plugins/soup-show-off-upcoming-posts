@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== SOUP - Show off Upcoming Posts ===
 Contributors: thewanderingbrit
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YMGV56YZ8K5YW
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
