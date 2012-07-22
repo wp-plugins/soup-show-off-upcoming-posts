@@ -5,6 +5,7 @@ Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, 
 Requires at least: 2.9
 Tested up to: 3.4.1
 Stable tag: 1.6.1
+License: GPLV2
 
 Displays your upcoming posts in a sidebar widget to tease your readers
 
