@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
@@ -32,7 +32,8 @@ class soup_widget extends WP_Widget {
 	// Constructor //
 	
     function soup_widget() {
-        parent::WP_Widget(false, $name = 'Upcoming Posts', array('description' => 'Displays your upcoming posts to entice your readers') );	
+    	load_plugin_textdomain('soup', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+        parent::WP_Widget(false, $name = __('Upcoming Posts', 'soup'), array('description' => __('Displays your upcoming posts to entice your readers', 'soup')) );	
     }
 
 	// Extract Args //
