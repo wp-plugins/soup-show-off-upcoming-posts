@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 3.4.1
-Stable tag: 1.6.3
+Stable tag: 1.7
 License: GPLv2
 
 Displays your upcoming posts in a sidebar widget to tease your readers
@@ -56,6 +56,10 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 
 == Changelog ==
 
+= 1.7 =
+* Added option to enable/disable RSS link
+* Minor bug fixes
+
 = 1.6.3 =
 * Made final preparations for localization. Translators: please send me your translations.
 
@@ -103,6 +107,9 @@ Get in touch with me and I'll do my best to help. [Contact me](http://www.theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.7 =
+* Added option to enable/disable RSS link. Minor bug fixes.
 
 = 1.6.3 =
 * Made final adjustments for localization.
