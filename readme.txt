@@ -3,7 +3,7 @@ Contributors: thewanderingbrit
 Donate link: https://www.theukedge.com/donate/
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
-Tested up to: 3.4.1
+Tested up to: 3.7
 Stable tag: 1.7
 License: GPLv2
 
