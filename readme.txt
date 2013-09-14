@@ -1,6 +1,6 @@
 === SOUP - Show off Upcoming Posts ===
 Contributors: thewanderingbrit
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YMGV56YZ8K5YW
+Donate link: https://www.theukedge.com/donate/
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 3.4.1
@@ -26,7 +26,7 @@ Here are the configurable options for the widget:
 
 I've got plans to continue developing and updating this plugin. If you have any suggestions on revisions that you'd like to see made, please [get in touch](http://www.theukedge.com/contact/ "Contact Dave at The UK Edge") or [find me on Twitter](http://www.twitter.com/daclements "Dave on Twitter").
 
-I also run [Do It With WordPress](http://www.doitwithwp.com "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites.
+I also run [Do It With WordPress](http://www.doitwithwp.com "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites, as well as [The WP Butler](http://www.thewpbutler.com), a service for keeping your site maintained, backup up, updated and secure.
 
 == Installation ==
 
