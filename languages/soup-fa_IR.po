@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SOUP - Show Off Upcoming Posts v1.6.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-07-27 13:29:13+0000\n"
+"Last-Translator: admin <admin@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Farsi\n"
+"X-Poedit-Country: IRAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: soup-upcoming-posts-widget.php:36
+#@ soup
+msgid "Upcoming Posts"
+msgstr "نوشته‌های آینده"
+
+#: soup-upcoming-posts-widget.php:36
+#@ soup
+msgid "Displays your upcoming posts to entice your readers"
+msgstr "نوشته‌های آینده‌ی شما را به خوانندگانتان نمایش می‌دهد تا آن‌ها را مشتاق‌تر کند"
+
+#: soup-upcoming-posts-widget.php:81
+#: soup-upcoming-posts-widget.php:82
+#: soup-upcoming-posts-widget.php:84
+#: soup-upcoming-posts-widget.php:89
+#@ soup
+msgid "Subscribe to "
+msgstr "ثبت‌نام در "
+
+#: soup-upcoming-posts-widget.php:84
+#@ soup
+msgid "Don't miss it"
+msgstr "این‌ها را از دست ندهید"
+
+#: soup-upcoming-posts-widget.php:84
+#@ soup
+msgid "Subscribe by RSS"
+msgstr "ثبت‌نام در آراِس‌اِس"
+
+#: soup-upcoming-posts-widget.php:89
+#@ soup
+msgid "Or, just"
+msgstr "یا، تنها"
+
+#: soup-upcoming-posts-widget.php:89
+#@ soup
+msgid " newsletter"
+msgstr "روزنامه"
+
+#: soup-upcoming-posts-widget.php:89
+#@ soup
+msgid "subscribe to the newsletter"
+msgstr "ثبت‌نام در روزنامه"
+
+#: soup-upcoming-posts-widget.php:95
+#@ soup
+msgid "Widget created by"
+msgstr "تهیّه‌کننده‌ی ابزارک"
+
+#: soup-upcoming-posts-widget.php:127
+#@ soup
+msgid "Title"
+msgstr "عنوان"
+
+#: soup-upcoming-posts-widget.php:131
+#@ soup
+msgid "Number of upcoming posts to display"
+msgstr "تعداد نوشته‌های آینده که نمایش داده می‌شوند"
+
+#: soup-upcoming-posts-widget.php:135
+#@ soup
+msgid "Categories to include (comma separated i.e. 2,19,12 - leave blank for all categories)"
+msgstr "دسته‌هایی که باید نمایش داده شوند (لیستی که با کامای انگلیسی از هم جدا شده است، مثل: 2,19,12- برای انتخاب همه‌ی دسته‌ها این قسمت را خالی بگذارید)"
+
+#: soup-upcoming-posts-widget.php:139
+#@ soup
+msgid "Post status"
+msgstr "نمایش نوشته‌های"
+
+#: soup-upcoming-posts-widget.php:141
+#@ soup
+msgid "Both scheduled posts and drafts"
+msgstr "زمان‌بندی‌شده و پیش‌نویس‌ها"
+
+#: soup-upcoming-posts-widget.php:142
+#@ soup
+msgid "Scheduled posts only"
+msgstr "زمان‌بندی‌شده"
+
+#: soup-upcoming-posts-widget.php:143
+#@ soup
+msgid "Drafts only"
+msgstr "پیش‌نویس"
+
+#: soup-upcoming-posts-widget.php:147
+#@ soup
+msgid "Sort order"
+msgstr "ترتیب نوشته‌ها"
+
+#: soup-upcoming-posts-widget.php:149
+#@ soup
+msgid "Next post first"
+msgstr "نوشته‌ی بعدی در ابتدای فهرست"
+
+#: soup-upcoming-posts-widget.php:150
+#@ soup
+msgid "Random order"
+msgstr "تصادفی"
+
+#: soup-upcoming-posts-widget.php:154
+#@ soup
+msgid "Message to display for no results"
+msgstr "پیامی که در صورت خالی بودن لیست باید نمایش داده شود"
+
+#: soup-upcoming-posts-widget.php:158
+#@ soup
+msgid "Show Newsletter"
+msgstr "نمایش روزنامه"
+
+#: soup-upcoming-posts-widget.php:162
+#@ soup
+msgid "Newsletter URL"
+msgstr "آدرس روزنامه"
+
+#: soup-upcoming-posts-widget.php:166
+#@ soup
+msgid "Give credit to plugin author"
+msgstr "اعتبار بخشیدن به تهیّه‌کننده‌ی افزونه"
+
