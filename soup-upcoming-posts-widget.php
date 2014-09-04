@@ -3,7 +3,7 @@
 Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: http://www.doitwithwp.com/soup-plugin-show-off-your-upcoming-posts/
 Description: Displays your upcoming posts to tease your readers
-Version: 1.6.3
+Version: 1.7
 Author: Dave Clements
 Author URI: http://www.theukedge.com
 License: GPLv2
@@ -42,6 +42,7 @@ class soup_widget extends WP_Widget {
 		extract( $args );
 		$title 		= apply_filters('widget_title', $instance['title']); // the widget title
 		$soupnumber 	= $instance['soup_number']; // the number of posts to show
+		$showrss 	= $instance['show_rss']; // whether or not to show the RSS feed link
 		$soup_cat 	= $instance['soup_cat']; // exclude posts from these categories
 		$posttype 	= $instance['post_type']; // the type of posts to show
 		$postorder	= $instance['post_order']; // Display newest first or random order
@@ -77,22 +78,24 @@ class soup_widget extends WP_Widget {
 			echo $noresults;
 		} ?>
 			
+		<?php if ($showrss) { ?>
 		<p>
 			<a href="<?php bloginfo('rss2_url') ?>" title="<?php _e('Subscribe to ', 'soup'); bloginfo('name'); ?>">
 				<img style="vertical-align:middle; margin:0 10px 0 0;" src="<?php echo plugins_url( 'includes/images/rss.png' , __FILE__ ); ?>" width="16px" height="16px" alt="<?php _e('Subscribe to ', 'soup'); bloginfo('name'); ?>" />
 			</a>
 			<?php _e('Don\'t miss it', 'soup'); ?> - <strong><a href="<?php bloginfo('rss2_url') ?>" title="<?php _e('Subscribe to ', 'soup'); bloginfo('name'); ?>"><?php _e('Subscribe by RSS', 'soup'); ?>.</a></strong>
 		</p>
+		<?php } ?>
 		
 		<?php if ($shownews) { ?>
 		<p>
 			<?php _e('Or, just', 'soup'); ?> <strong><a href="<?php echo $newsletterurl; ?>" title="<?php _e('Subscribe to ', 'soup'); bloginfo ('name'); _e(' newsletter', 'soup'); ?>"><?php _e('subscribe to the newsletter', 'soup'); ?></a></strong>!
 		</p>
-		<?php }
+		<?php } ?>
 
-		if ($authorcredit) { ?>
+		<?php if ($authorcredit) { ?>
 		<p style="font-size:10px;">
-			<?php _e('Widget created by', 'soup'); ?> <a href="http://www.doitwithwp.com" title="WordPress Tutorials">Dave Clements</a>
+			<?php _e('Widget created by', 'soup'); ?> <a href="http://www.doitwithwp.com" title="WordPress Tutorials" rel="external nofollow">Dave Clements</a>
 		</p>
 		<?php }
 				
@@ -106,6 +109,7 @@ class soup_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['soup_number'] = strip_tags($new_instance['soup_number']);
+		$instance['show_rss'] = strip_tags($new_instance['show_rss']);
 		$instance['soup_cat'] = strip_tags($new_instance['soup_cat']);
 		$instance['post_type'] = strip_tags($new_instance['post_type']);
 		$instance['post_order'] = strip_tags($new_instance['post_order']);
@@ -120,7 +124,7 @@ class soup_widget extends WP_Widget {
 	
 	function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'soup_cat' => '', 'post_type' => 'future', 'post_order' => 'date', 'show_newsletter' => false, 'newsletter_url' => '', 'author_credit' => 'on', 'no_results' => 'Sorry - nothing planned yet!' );
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'show_rss' => false, 'soup_cat' => '', 'post_type' => 'future', 'post_order' => 'date', 'show_newsletter' => false, 'newsletter_url' => '', 'author_credit' => 'on', 'no_results' => 'Sorry - nothing planned yet!' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<p>
@@ -130,6 +134,10 @@ class soup_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('soup_number'); ?>"><?php _e('Number of upcoming posts to display', 'soup'); ?>:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id('soup_number'); ?>" name="<?php echo $this->get_field_name('soup_number'); ?>" type="text" value="<?php echo $instance['soup_number']; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('show_rss'); ?>"><?php _e('Show RSS link', 'soup'); ?>?</label>
+			<input type="checkbox" class="checkbox" <?php checked('1', isset ($instance['show_rss'])); ?> id="<?php echo $this->get_field_id('show_rss'); ?>" name="<?php echo $this->get_field_name('show_rss'); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('soup_cat'); ?>"><?php _e('Categories to include (comma separated i.e. 2,19,12 - leave blank for all categories)', 'soup'); ?></label>
@@ -156,7 +164,7 @@ class soup_widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('show_newsletter'); ?>"><?php _e('Show Newsletter', 'soup'); ?>?</label>
-			<input type="checkbox" class="checkbox" <?php checked( $instance['show_newsletter'], 'on' ); ?> id="<?php echo $this->get_field_id('show_newsletter'); ?>" name="<?php echo $this->get_field_name('show_newsletter'); ?>" />
+			<input type="checkbox" class="checkbox" <?php checked('1', isset ($instance['show_newsletter'])); ?> id="<?php echo $this->get_field_id('show_newsletter'); ?>" name="<?php echo $this->get_field_name('show_newsletter'); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('newsletter_url'); ?>"><?php _e('Newsletter URL', 'soup'); ?>:</label>
@@ -164,7 +172,7 @@ class soup_widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('author_credit'); ?>"><?php _e('Give credit to plugin author', 'soup'); ?>?</label>
-			<input type="checkbox" class="checkbox" <?php checked( $instance['author_credit'], 'on' ); ?> id="<?php echo $this->get_field_id('author_credit'); ?>" name="<?php echo $this->get_field_name('author_credit'); ?>" />
+			<input type="checkbox" class="checkbox" <?php checked('1', isset ($instance['author_credit'])); ?> id="<?php echo $this->get_field_id('author_credit'); ?>" name="<?php echo $this->get_field_name('author_credit'); ?>" />
 		</p>
     <?php }
  
