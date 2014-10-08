@@ -1,6 +1,6 @@
 === SOUP - Show off Upcoming Posts ===
 Contributors: thewanderingbrit
-Donate link: https://www.theukedge.com/donate/
+Donate link: https://www.theukedge.com/donate/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=donate
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 4.0
@@ -10,6 +10,8 @@ License: GPLv2
 Displays your upcoming posts in a sidebar widget to tease your readers
 
 == Description ==
+
+**Like this plugin?** Consider [leaving a quick review](https://wordpress.org/support/view/plugin-reviews/soup-show-off-upcoming-posts "Review SOUP") or writing about how you've used it on your site - [send me a link](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave") to that write up if you do.
 
 SOUP creates a widget in your sidebar which allows you to display your upcoming posts (scheduled, drafts, or both) to your readers. The idea is to entice your readers to come back and read the article once it gets published, or better yet, subscribe to your RSS feed and/or newsletter.
 
@@ -24,9 +26,9 @@ Here are the configurable options for the widget:
 * Show/hide newsletter link
 * Include link to sign up to newsletter
 
-I've got plans to continue developing and updating this plugin. If you have any suggestions on revisions that you'd like to see made, please [get in touch](http://www.theukedge.com/contact/ "Contact Dave at The UK Edge") or [find me on Twitter](http://www.twitter.com/daclements "Dave on Twitter").
+I've got plans to continue developing and updating this plugin. If you have any suggestions on revisions that you'd like to see made, please [get in touch](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave") or [find me on Twitter](http://www.twitter.com/daclements "Dave on Twitter").
 
-I also run [Do It With WordPress](http://www.doitwithwp.com "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites, as well as [The WP Butler](http://www.thewpbutler.com), a service for keeping your site maintained, backup up, updated and secure.
+I also run [Do It With WordPress](http://www.doitwithwp.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=my-other-sites "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites, as well as [The WP Butler](https://www.thewpbutler.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=wordpress-services "WordPress Maintenance Services"), a service for keeping your site maintained, backed up, updated and secure.
 
 == Installation ==
 
@@ -47,7 +49,7 @@ Many WordPress users send their RSS feed through FeedBurner, which has the optio
 
 = I'm having issues. What do I do? =
 
-Get in touch with me and I'll do my best to help. [Contact me](http://www.theukedge.com/contact/ "Contact Dave at The UK Edge").
+Get in touch with me and I'll do my best to help. [Contact me](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave at The UK Edge").
 
 == Screenshots ==
 
