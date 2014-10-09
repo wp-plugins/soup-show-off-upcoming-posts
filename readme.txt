@@ -13,6 +13,8 @@ Displays your upcoming posts in a sidebar widget to tease your readers
 
 **Like this plugin?** Consider [leaving a quick review](https://wordpress.org/support/view/plugin-reviews/soup-show-off-upcoming-posts "Review SOUP") or writing about how you've used it on your site - [send me a link](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave") to that write up if you do.
 
+This plugin is maintained on [GitHub](https://github.com/theukedge/soup-show-off-upcoming-posts), so feel free to use the repository for reporting issues, submitting feature requests and submitting pull requests.
+
 SOUP creates a widget in your sidebar which allows you to display your upcoming posts (scheduled, drafts, or both) to your readers. The idea is to entice your readers to come back and read the article once it gets published, or better yet, subscribe to your RSS feed and/or newsletter.
 
 Here are the configurable options for the widget:
@@ -39,9 +41,9 @@ I also run [Do It With WordPress](http://www.doitwithwp.com/?utm_source=wordpres
 
 == Frequently Asked Questions ==
 
-= Are there more options planned in future? =
+= Are there more features planned in future? =
 
-Absolutely. I'll be providing more options and upgrades in the near future. You can stay up to date by following me on [Twitter](http://www.twitter.com/daclements "Dave on Twitter").
+Absolutely. I'll be providing more options and upgrades in the near future. You can stay up to date by following me on [Twitter](http://www.twitter.com/daclements "Dave on Twitter"). If you have an idea for a new feature, you can create a new feature request on [GitHub](https://github.com/theukedge/soup-show-off-upcoming-posts/issues). If you don't have a GitHub account, then [tell me](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact The UK Edge") what this widget should do that it doesn't currently.
 
 = I don't have a newsletter. Is this functionality lost on me? =
 
@@ -49,7 +51,7 @@ Many WordPress users send their RSS feed through FeedBurner, which has the optio
 
 = I'm having issues. What do I do? =
 
-Get in touch with me and I'll do my best to help. [Contact me](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave at The UK Edge").
+The best thing to do is to submit an issue on [GitHub](https://github.com/theukedge/soup-show-off-upcoming-posts/issues). If you don't have a GitHub account, then [get in touch with me](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact The UK Edge") and I'll see about getting it fixed.
 
 == Screenshots ==
 
