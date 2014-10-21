@@ -117,6 +117,9 @@ The best thing to do is to submit an issue on [GitHub](https://github.com/theuke
 
 == Upgrade Notice ==
 
+= 1.7.1 =
+* Added Spanish translation (es_ES) thanks to Andrew Kurtis.
+
 = 1.7 =
 * Added option to enable/disable RSS link. Minor bug fixes.
 
