@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SOUP - Show Off Upcoming Posts v1.6.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-10-21 09:40+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:36
+msgid "Upcoming Posts"
+msgstr "Próximas publicaciones"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:36
+msgid "Displays your upcoming posts to entice your readers"
+msgstr "Muestra sus próximas publicaciones para atrapar a sus lectores"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:81 soup-upcoming-posts-widget.php:82
+#: soup-upcoming-posts-widget.php:84 soup-upcoming-posts-widget.php:89
+msgid "Subscribe to "
+msgstr "Suscribirse a"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:84
+msgid "Don't miss it"
+msgstr "No se lo pierda"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:84
+msgid "Subscribe by RSS"
+msgstr "Suscribirse por RSS"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:89
+msgid "Or, just"
+msgstr "O, simplemente"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:89
+msgid " newsletter"
+msgstr "boletín"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:89
+msgid "subscribe to the newsletter"
+msgstr "Suscribirse al boletín"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:95
+msgid "Widget created by"
+msgstr "Widget creado por"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:127
+msgid "Title"
+msgstr "Título"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:131
+msgid "Number of upcoming posts to display"
+msgstr "Número de publicaciones futuras a mostrar"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:135
+msgid ""
+"Categories to include (comma separated i.e. 2,19,12 - leave blank for all "
+"categories)"
+msgstr ""
+"Categorías a incluir (separadas por coma p.ej. 2, 19, 12 - dejar en blanco "
+"para todas las categorías"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:139
+msgid "Post status"
+msgstr "Estado de la publicación"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:141
+msgid "Both scheduled posts and drafts"
+msgstr "Tanto publicaciones programadas como borradores"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:142
+msgid "Scheduled posts only"
+msgstr "Sólo publicaciones programadas"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:143
+msgid "Drafts only"
+msgstr "Sólo borradores"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:147
+msgid "Sort order"
+msgstr "Orden"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:149
+msgid "Next post first"
+msgstr "Siguiente publicación primero"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:150
+msgid "Random order"
+msgstr "Orden aleatorio"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:154
+msgid "Message to display for no results"
+msgstr "Mensaje a mostrar para no resultados"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:158
+msgid "Show Newsletter"
+msgstr "Mostrar Boletín"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:162
+msgid "Newsletter URL"
+msgstr "URL del Boletín"
+
+# @ soup
+#: soup-upcoming-posts-widget.php:166
+msgid "Give credit to plugin author"
+msgstr "Dar crédito al autor del plugin"

@@ -28,6 +28,8 @@ Here are the configurable options for the widget:
 * Show/hide newsletter link
 * Include link to sign up to newsletter
 
+The plugin has been translated to Spanish (es_ES - thanks to Andrew Curtis) and Farsi (fa_IR - thanks to Saeed Adel Mehraban).
+
 I've got plans to continue developing and updating this plugin. If you have any suggestions on revisions that you'd like to see made, please [get in touch](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave") or [find me on Twitter](http://www.twitter.com/daclements "Dave on Twitter").
 
 I also run [Do It With WordPress](http://www.doitwithwp.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=my-other-sites "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites, as well as [The WP Butler](https://www.thewpbutler.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=wordpress-services "WordPress Maintenance Services"), a service for keeping your site maintained, backed up, updated and secure.
@@ -59,6 +61,9 @@ The best thing to do is to submit an issue on [GitHub](https://github.com/theuke
 2. The widget control panel.
 
 == Changelog ==
+
+= 1.7.1 =
+* Added Spanish translation - props to Andrew Kurtis
 
 = 1.7 =
 * Added option to enable/disable RSS link
