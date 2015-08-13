@@ -3,8 +3,8 @@ Contributors: thewanderingbrit
 Donate link: https://www.theukedge.com/donate/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=donate
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
-Tested up to: 4.0
-Stable tag: 1.7.2
+Tested up to: 4.3
+Stable tag: 1.8
 License: GPLv2
 
 Displays your upcoming posts in a sidebar widget to tease your readers
@@ -61,6 +61,10 @@ The best thing to do is to submit an issue on [GitHub](https://github.com/theuke
 2. The widget control panel.
 
 == Changelog ==
+
+= 1.8 =
+* Updated PHP constructor methods to remove deprecated methods
+* Remove author credit
 
 = 1.7.2 =
 * Added Spanish translation - props to Andrew Kurtis
@@ -120,6 +124,10 @@ The best thing to do is to submit an issue on [GitHub](https://github.com/theuke
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.8 =
+* Updated coding standards
+* Remove author credit
 
 = 1.7.2 =
 * Added Spanish translation - props to Andrew Kurtis
