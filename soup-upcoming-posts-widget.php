@@ -3,7 +3,7 @@
 Plugin Name: SOUP - Show Off Upcoming Posts
 Plugin URI: https://github.com/theukedge/soup-show-off-upcoming-posts
 Description: Displays your upcoming posts to tease your readers
-Version: 1.8
+Version: 1.9
 Author: Dave Clements
 Author URI: https://www.theukedge.com
 License: GPLv2
@@ -25,7 +25,20 @@ License: GPLv2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-	// Start class soup_widget //
+/* ---------------------------------- *
+ * constants
+ * ---------------------------------- */
+
+if ( !defined( 'SOUP_PLUGIN_DIR' ) ) {
+	define( 'SOUP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+}
+
+if ( !defined( 'SOUP_PLUGIN_URL' ) ) {
+	define( 'SOUP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+}
+
+
+// Start class soup_widget //
 
 class soup_widget extends WP_Widget {
 
@@ -44,7 +57,9 @@ class soup_widget extends WP_Widget {
 		$soupnumber 	= $instance['soup_number']; // the number of posts to show
 		$showrss 	= $instance['show_rss']; // whether or not to show the RSS feed link
 		$soup_cat 	= $instance['soup_cat']; // exclude posts from these categories
-		$posttype 	= $instance['post_type']; // the type of posts to show
+		$poststatus 	= $instance['post_status']; // the statuses of posts to show
+		$posttypes 	= $instance['post_types']; // the type of posts to show
+		$posttypesarray = explode(',', $posttypes); // array of post types
 		$postorder	= $instance['post_order']; // Display newest first or random order
 		$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
 		$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
@@ -65,7 +80,7 @@ class soup_widget extends WP_Widget {
 		<?php
 			global $post;
 			$tmp_post = $post;
-			$args = array( 'numberposts' => $soupnumber, 'no_paging' => '1', 'post_status' => $posttype, 'order' => 'ASC', 'orderby' => $postorder, 'ignore_sticky_posts' => '1', 'category' => $soup_cat);
+			$args = array( 'numberposts' => $soupnumber, 'no_paging' => '1', 'post_status' => $poststatus, 'order' => 'ASC', 'orderby' => $postorder, 'ignore_sticky_posts' => '1', 'category' => $soup_cat, 'post_type' => $posttypesarray );
 			$myposts = get_posts( $args );
 			foreach( $myposts as $post ) : setup_postdata($post); ?>
 				<li><?php the_title(); ?></li>
@@ -104,7 +119,8 @@ class soup_widget extends WP_Widget {
 		$instance['soup_number'] = strip_tags($new_instance['soup_number']);
 		$instance['show_rss'] = strip_tags($new_instance['show_rss']);
 		$instance['soup_cat'] = strip_tags($new_instance['soup_cat']);
-		$instance['post_type'] = strip_tags($new_instance['post_type']);
+		$instance['post_status'] = strip_tags($new_instance['post_status']);
+		$instance['post_types'] = strip_tags($new_instance['post_types']);
 		$instance['post_order'] = strip_tags($new_instance['post_order']);
 		$instance['show_newsletter'] = strip_tags($new_instance['show_newsletter']);
 		$instance['newsletter_url'] = strip_tags($new_instance['newsletter_url'],'<a>');
@@ -116,7 +132,7 @@ class soup_widget extends WP_Widget {
 
 	function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'show_rss' => false, 'soup_cat' => '', 'post_type' => 'future', 'post_order' => 'date', 'show_newsletter' => false, 'newsletter_url' => '', 'author_credit' => 'on', 'no_results' => 'Sorry - nothing planned yet!' );
+		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'show_rss' => false, 'soup_cat' => '', 'post_status' => 'future', 'post_types' => 'post', 'post_order' => 'date', 'show_newsletter' => false, 'newsletter_url' => '', 'author_credit' => 'on', 'no_results' => 'Sorry - nothing planned yet!' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 		<p>
@@ -136,12 +152,16 @@ class soup_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('soup_cat'); ?>" name="<?php echo $this->get_field_name('soup_cat'); ?>" type="text" value="<?php echo $instance['soup_cat']; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('post_type'); ?>"><?php _e('Post status', 'soup'); ?>:</label>
-			<select id="<?php echo $this->get_field_id('post_type'); ?>" name="<?php echo $this->get_field_name('post_type'); ?>" class="widefat" style="width:100%;">
-				<option value="future,draft" <?php selected('future,draft', $instance['post_type']); ?>><?php _e('Both scheduled posts and drafts', 'soup'); ?></option>
-				<option value="future" <?php selected('future', $instance['post_type']); ?>><?php _e('Scheduled posts only', 'soup'); ?></option>
-				<option value="draft" <?php selected('draft', $instance['post_type']); ?>><?php _e('Drafts only', 'soup'); ?></option>
+			<label for="<?php echo $this->get_field_id('post_status'); ?>"><?php _e('Post status', 'soup'); ?>:</label>
+			<select id="<?php echo $this->get_field_id('post_status'); ?>" name="<?php echo $this->get_field_name('post_status'); ?>" class="widefat" style="width:100%;">
+				<option value="future,draft" <?php selected('future,draft', $instance['post_status']); ?>><?php _e('Both scheduled posts and drafts', 'soup'); ?></option>
+				<option value="future" <?php selected('future', $instance['post_status']); ?>><?php _e('Scheduled posts only', 'soup'); ?></option>
+				<option value="draft" <?php selected('draft', $instance['post_status']); ?>><?php _e('Drafts only', 'soup'); ?></option>
 			</select>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('post_types'); ?>"><?php _e('Post types to display (comma separated for multiple - e.g. post,page,event)', 'soup'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('post_types'); ?>" name="<?php echo $this->get_field_name('post_types'); ?>" type="text" value="<?php echo $instance['post_types']; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('post_order'); ?>"><?php _e('Sort order', 'soup'); ?>:</label>
