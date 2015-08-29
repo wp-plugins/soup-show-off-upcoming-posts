@@ -64,20 +64,35 @@ The best thing to do is to submit an issue on [GitHub](https://github.com/theuke
 == Changelog ==
 
 = 1.9 =
+
+Release date: August 13, 2015
+
 * Added ability to show upcoming posts for multiple post types, including custom post types
 
 = 1.8 =
+
+Release date: August 12, 2015
+
 * Updated PHP constructor methods to remove deprecated methods
 * Remove author credit
 
 = 1.7.2 =
+
+Release date: October 21, 2014
+
 * Added Spanish translation - props to Andrew Kurtis
 * Correct versioning mistakes in 1.7.1
 
 = 1.7.1 =
+
+Release date: October 21, 2014
+
 * Added Spanish translation - props to Andrew Kurtis
 
 = 1.7 =
+
+Release date: October 8, 2014
+
 * Added option to enable/disable RSS link
 * Minor bug fixes
 

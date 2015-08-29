@@ -53,17 +53,18 @@ class soup_widget extends WP_Widget {
 
 	function widget($args, $instance) {
 		extract( $args );
-		$title 		= apply_filters('widget_title', $instance['title']); // the widget title
-		$soupnumber 	= $instance['soup_number']; // the number of posts to show
-		$showrss 	= $instance['show_rss']; // whether or not to show the RSS feed link
-		$soup_cat 	= $instance['soup_cat']; // exclude posts from these categories
-		$poststatus 	= $instance['post_status']; // the statuses of posts to show
-		$posttypes 	= $instance['post_types']; // the type of posts to show
-		$posttypesarray = explode(',', $posttypes); // array of post types
-		$postorder	= $instance['post_order']; // Display newest first or random order
-		$shownews 	= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
-		$newsletterurl 	= $instance['newsletter_url']; // URL of newsletter signup
-		$noresults	= $instance['no_results']; // Message for when there are no posts to display
+		$title			= apply_filters('widget_title', $instance['title']); // the widget title
+		$soupnumber		= $instance['soup_number']; // the number of posts to show
+		$showdate		= $instance['show_date']; // whether or not to show the scheduled post date
+		$showrss		= $instance['show_rss']; // whether or not to show the RSS feed link
+		$soup_cat		= $instance['soup_cat']; // exclude posts from these categories
+		$poststatus		= $instance['post_status']; // the statuses of posts to show
+		$posttypes		= $instance['post_types']; // the type of posts to show
+		$posttypesarray	= explode(',', $posttypes); // array of post types
+		$postorder		= $instance['post_order']; // Display newest first or random order
+		$shownews		= isset($instance['show_newsletter']) ? $instance['show_newsletter'] : false ; // whether or not to show the newsletter link
+		$newsletterurl	= $instance['newsletter_url']; // URL of newsletter signup
+		$noresults		= $instance['no_results']; // Message for when there are no posts to display
 
 	// Before widget //
 
@@ -83,7 +84,12 @@ class soup_widget extends WP_Widget {
 			$args = array( 'numberposts' => $soupnumber, 'no_paging' => '1', 'post_status' => $poststatus, 'order' => 'ASC', 'orderby' => $postorder, 'ignore_sticky_posts' => '1', 'category' => $soup_cat, 'post_type' => $posttypesarray );
 			$myposts = get_posts( $args );
 			foreach( $myposts as $post ) : setup_postdata($post); ?>
-				<li><?php the_title(); ?></li>
+				<li>
+					<?php the_title(); ?>
+					<?php if($showdate) {
+						echo '(' . get_the_time( get_option( 'date_format' ) ) . ')';
+					} ?>
+				</li>
 			<?php endforeach; ?>
 			<?php $post = $tmp_post; ?>
 		</ul>
@@ -117,6 +123,7 @@ class soup_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['soup_number'] = strip_tags($new_instance['soup_number']);
+		$instance['show_date'] = strip_tags($new_instance['show_date']);
 		$instance['show_rss'] = strip_tags($new_instance['show_rss']);
 		$instance['soup_cat'] = strip_tags($new_instance['soup_cat']);
 		$instance['post_status'] = strip_tags($new_instance['post_status']);
@@ -132,7 +139,20 @@ class soup_widget extends WP_Widget {
 
 	function form($instance) {
 
-		$defaults = array( 'title' => 'Upcoming Posts', 'soup_number' => 3, 'show_rss' => false, 'soup_cat' => '', 'post_status' => 'future', 'post_types' => 'post', 'post_order' => 'date', 'show_newsletter' => false, 'newsletter_url' => '', 'author_credit' => 'on', 'no_results' => 'Sorry - nothing planned yet!' );
+		$defaults = array(
+			'title' => 'Upcoming Posts',
+			'soup_number' => 3,
+			'show_date' => 'off',
+			'show_rss' => 'off',
+			'soup_cat' => '',
+			'post_status' => 'future',
+			'post_types' => 'post',
+			'post_order' => 'date',
+			'show_newsletter' => 'off',
+			'newsletter_url' => '',
+			'no_results' => 'Sorry - nothing planned yet!',
+		);
+
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 		<p>
@@ -144,8 +164,12 @@ class soup_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('soup_number'); ?>" name="<?php echo $this->get_field_name('soup_number'); ?>" type="text" value="<?php echo $instance['soup_number']; ?>" />
 		</p>
 		<p>
+			<label for="<?php echo $this->get_field_id('show_date'); ?>"><?php _e('Show post date', 'soup'); ?>?</label>
+			<input <?php checked( $instance['show_date'], 'on' ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" type="checkbox" />
+		</p>
+		<p>
 			<label for="<?php echo $this->get_field_id('show_rss'); ?>"><?php _e('Show RSS link', 'soup'); ?>?</label>
-			<input type="checkbox" class="checkbox" <?php checked('1', isset ($instance['show_rss'])); ?> id="<?php echo $this->get_field_id('show_rss'); ?>" name="<?php echo $this->get_field_name('show_rss'); ?>" />
+			<input <?php checked( $instance['show_rss'], 'on' ); ?> id="<?php echo $this->get_field_id( 'show_rss' ); ?>" name="<?php echo $this->get_field_name( 'show_rss' ); ?>" type="checkbox" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('soup_cat'); ?>"><?php _e('Categories to include (comma separated i.e. 2,19,12 - leave blank for all categories)', 'soup'); ?></label>
@@ -176,7 +200,7 @@ class soup_widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('show_newsletter'); ?>"><?php _e('Show Newsletter', 'soup'); ?>?</label>
-			<input type="checkbox" class="checkbox" <?php checked('1', isset ($instance['show_newsletter'])); ?> id="<?php echo $this->get_field_id('show_newsletter'); ?>" name="<?php echo $this->get_field_name('show_newsletter'); ?>" />
+			<input <?php checked( $instance['show_newsletter'], 'on' ); ?> id="<?php echo $this->get_field_id( 'show_newsletter' ); ?>" name="<?php echo $this->get_field_name( 'show_newsletter' ); ?>" type="checkbox" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('newsletter_url'); ?>"><?php _e('Newsletter URL', 'soup'); ?>:</label>
