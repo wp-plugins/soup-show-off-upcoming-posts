@@ -4,7 +4,7 @@ Donate link: https://www.theukedge.com/donate/?utm_source=wordpress.org&utm_medi
 Tags: upcoming, posts, future, scheduled, widget, sidebar, list, number, title, interest, readers, newsletter, rss feed, feedburner, drafts, soup
 Requires at least: 2.9
 Tested up to: 4.3
-Stable tag: 1.9
+Stable tag: 1.10
 License: GPLv2
 
 Displays your upcoming posts in a sidebar widget to tease your readers
@@ -21,6 +21,7 @@ Here are the configurable options for the widget:
 
 * Title of sidebar widget
 * Number of upcoming posts to display (always in ascending order - newest first)
+* Choose whether to show date of upcoming post
 * Which categories to display posts from
 * Choose whether to show scheduled posts, drafts, or both.
 * Choose which post types to include
@@ -33,7 +34,7 @@ The plugin has been translated to Spanish (es_ES - thanks to Andrew Curtis) and 
 
 I've got plans to continue developing and updating this plugin. If you have any suggestions on revisions that you'd like to see made, please [get in touch](https://www.theukedge.com/contact/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=contact "Contact Dave") or [find me on Twitter](http://www.twitter.com/daclements "Dave on Twitter").
 
-I also run [Do It With WordPress](http://www.doitwithwp.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=my-other-sites "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites, as well as [The WP Butler](https://www.thewpbutler.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=wordpress-services "WordPress Maintenance Services"), a service for keeping your site maintained, backed up, updated and secure.
+I also run [Do It With WordPress](https://www.doitwithwp.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=my-other-sites "WordPress Tutorials"), which has an array of tutorials for managing, modifying and maintaining your WordPress sites, as well as [The WP Butler](https://www.thewpbutler.com/?utm_source=wordpress.org&utm_medium=plugin&utm_campaign=wordpress-services "WordPress Maintenance Services"), a service for keeping your site maintained, backed up, updated and secure.
 
 == Installation ==
 
@@ -62,6 +63,12 @@ The best thing to do is to submit an issue on [GitHub](https://github.com/theuke
 2. The widget control panel.
 
 == Changelog ==
+
+= 1.10 =
+
+Release date: August 29, 2015
+
+* Added ability to show date of upcoming posts next to post title
 
 = 1.9 =
 
@@ -143,6 +150,9 @@ Release date: October 8, 2014
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.10 =
+* Added ability to show scheduled post date with post title
 
 = 1.9 =
 * Added ability to include multiple/custom post types
